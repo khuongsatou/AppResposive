@@ -1,5 +1,10 @@
 import 'package:appresponsive/screens/homePages.dart';
+import 'package:appresponsive/screens/responsiveTwo/desktop_scaffold.dart';
+import 'package:appresponsive/screens/responsiveTwo/mobile_scaffold.dart';
+import 'package:appresponsive/screens/responsiveTwo/tablet_scaffold.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/responsiveTwo/responsive_layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +30,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomePages(),
+      home: const ResponsiveLayout(
+          mobileScaffold: MobileScaffold(),
+          tabletScaffold: TabletScaffold(),
+          desktopScaffold: DesktopScaffold()),
     );
   }
 }
