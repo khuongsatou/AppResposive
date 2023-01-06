@@ -1,18 +1,18 @@
 import 'package:appresponsive/screens/constraints.dart';
 import 'package:appresponsive/screens/widgets/myBox.dart';
+import 'package:appresponsive/screens/widgets/myTile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../widgets/myTile.dart';
-
-class TabletScaffold extends StatefulWidget {
-  const TabletScaffold({Key? key}) : super(key: key);
+class AndroidScaffold extends StatefulWidget {
+  const AndroidScaffold({Key? key}) : super(key: key);
 
   @override
-  _TabletScaffoldState createState() => _TabletScaffoldState();
+  _AndroidScaffoldState createState() => _AndroidScaffoldState();
 }
 
-class _TabletScaffoldState extends State<TabletScaffold> {
+class _AndroidScaffoldState extends State<AndroidScaffold> {
   ScrollController _scrollController = ScrollController();
   double heightScroll = 0.0;
 
@@ -36,7 +36,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
       appBar: AppBar(
         backgroundColor: Colors.grey[800],
         title: Container(
-          child: Text("Tablet"),
+          child: Text("Android/Mobile"),
         ),
       ),
       backgroundColor: Colors.grey[300],
@@ -48,13 +48,13 @@ class _TabletScaffoldState extends State<TabletScaffold> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                height: sizeScreen.width / 4,
+                height: sizeScreen.width,
                 width: sizeScreen.width,
                 child: GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4),
+                            crossAxisCount: 2),
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Padding(
@@ -65,7 +65,9 @@ class _TabletScaffoldState extends State<TabletScaffold> {
               ),
               Container(
                 // height: constraints.maxHeight + heightScroll,
-                height: 10 * (sizeScreen.height * 0.4),
+                height: 10 * (sizeScreen.height * 0.4) +
+                    8.0 * 10 +
+                    (sizeScreen.width * 0.5),
                 child: ListView.builder(
                   itemCount: 10,
                   physics: const NeverScrollableScrollPhysics(),

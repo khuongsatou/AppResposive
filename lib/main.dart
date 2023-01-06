@@ -4,6 +4,8 @@ import 'package:appresponsive/screens/responsiveTwo/mobile_scaffold.dart';
 import 'package:appresponsive/screens/responsiveTwo/tablet_scaffold.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/responsiveTwo/android_scaffold.dart';
+import 'screens/responsiveTwo/ios_scaffold.dart';
 import 'screens/responsiveTwo/responsive_layout.dart';
 
 void main() {
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepPurple,
       ),
-      home: const ResponsiveLayout(
+      home: ResponsiveLayout(
+          flatformMobileWidget: FlatformMobileWidget(
+              androidScaffold: AndroidScaffold(), iosScaffold: IosScaffold()),
           mobileScaffold: MobileScaffold(),
           tabletScaffold: TabletScaffold(),
           desktopScaffold: DesktopScaffold()),

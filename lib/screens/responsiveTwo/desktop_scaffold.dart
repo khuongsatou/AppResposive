@@ -50,7 +50,12 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
     Size sizeScreen = MediaQuery.of(context).size;
     // print("heightScroll ${heightScroll}");
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.grey[800]),
+      appBar: AppBar(
+        backgroundColor: Colors.grey[800],
+        title: Container(
+          child: Text("Desktop"),
+        ),
+      ),
       backgroundColor: Colors.grey[300],
       body: LayoutBuilder(builder: (context, constraints) {
         return SingleChildScrollView(
